@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/CMB/2nd year 2nd SEM/Mobile Application Development (IA 2211) 2021/QuizSpot/app/src/main/res/drawable-anydpi/ic_account.xml" value="0.315" />
+        <entry key="..\:/CMB/2nd year 2nd SEM/Mobile Application Development (IA 2211) 2021/QuizSpot/app/src/main/res/drawable-anydpi/ic_home.xml" value="0.307" />
+        <entry key="..\:/CMB/2nd year 2nd SEM/Mobile Application Development (IA 2211) 2021/QuizSpot/app/src/main/res/drawable/button_boder.xml" value="0.3675" />
+        <entry key="..\:/CMB/2nd year 2nd SEM/Mobile Application Development (IA 2211) 2021/QuizSpot/app/src/main/res/drawable/circle.xml" value="0.315" />
+        <entry key="..\:/CMB/2nd year 2nd SEM/Mobile Application Development (IA 2211) 2021/QuizSpot/app/src/main/res/drawable/gradiend_background.xml" value="0.3145" />
+        <entry key="..\:/CMB/2nd year 2nd SEM/Mobile Application Development (IA 2211) 2021/QuizSpot/app/src/main/res/drawable/gradient_background.xml" value="0.325" />
+        <entry key="..\:/CMB/2nd year 2nd SEM/Mobile Application Development (IA 2211) 2021/QuizSpot/app/src/main/res/drawable/main_background.xml" value="0.2785" />
+        <entry key="..\:/CMB/2nd year 2nd SEM/Mobile Application Development (IA 2211) 2021/QuizSpot/app/src/main/res/drawable/round_conner_buttom.xml" value="0.325" />
+        <entry key="..\:/CMB/2nd year 2nd SEM/Mobile Application Development (IA 2211) 2021/QuizSpot/app/src/main/res/layout/activity_login.xml" value="0.358695652173913" />
+        <entry key="..\:/CMB/2nd year 2nd SEM/Mobile Application Development (IA 2211) 2021/QuizSpot/app/src/main/res/layout/activity_main.xml" value="0.3183876811594203" />
+        <entry key="..\:/CMB/2nd year 2nd SEM/Mobile Application Development (IA 2211) 2021/QuizSpot/app/src/main/res/layout/activity_questions.xml" value="0.264" />
+        <entry key="..\:/CMB/2nd year 2nd SEM/Mobile Application Development (IA 2211) 2021/QuizSpot/app/src/main/res/layout/activity_sign_up.xml" value="0.30434782608695654" />
+        <entry key="..\:/CMB/2nd year 2nd SEM/Mobile Application Development (IA 2211) 2021/QuizSpot/app/src/main/res/layout/activity_sing_up.xml" value="0.358695652173913" />
+        <entry key="..\:/CMB/2nd year 2nd SEM/Mobile Application Development (IA 2211) 2021/QuizSpot/app/src/main/res/layout/activity_spalash.xml" value="0.3183876811594203" />
+        <entry key="..\:/CMB/2nd year 2nd SEM/Mobile Application Development (IA 2211) 2021/QuizSpot/app/src/main/res/layout/activity_test.xml" value="0.36666666666666664" />
+        <entry key="..\:/CMB/2nd year 2nd SEM/Mobile Application Development (IA 2211) 2021/QuizSpot/app/src/main/res/layout/app_bar_main.xml" value="0.3183876811594203" />
+        <entry key="..\:/CMB/2nd year 2nd SEM/Mobile Application Development (IA 2211) 2021/QuizSpot/app/src/main/res/layout/cat_item_layout.xml" value="0.358695652173913" />
+        <entry key="..\:/CMB/2nd year 2nd SEM/Mobile Application Development (IA 2211) 2021/QuizSpot/app/src/main/res/layout/content_main.xml" value="0.264" />
+        <entry key="..\:/CMB/2nd year 2nd SEM/Mobile Application Development (IA 2211) 2021/QuizSpot/app/src/main/res/layout/dialog_layout.xml" value="0.30434782608695654" />
+        <entry key="..\:/CMB/2nd year 2nd SEM/Mobile Application Development (IA 2211) 2021/QuizSpot/app/src/main/res/layout/fragment_account.xml" value="0.36666666666666664" />
+        <entry key="..\:/CMB/2nd year 2nd SEM/Mobile Application Development (IA 2211) 2021/QuizSpot/app/src/main/res/layout/fragment_category.xml" value="0.358695652173913" />
+        <entry key="..\:/CMB/2nd year 2nd SEM/Mobile Application Development (IA 2211) 2021/QuizSpot/app/src/main/res/layout/fragment_gallery.xml" value="0.358695652173913" />
+        <entry key="..\:/CMB/2nd year 2nd SEM/Mobile Application Development (IA 2211) 2021/QuizSpot/app/src/main/res/layout/fragment_home.xml" value="0.36666666666666664" />
+        <entry key="..\:/CMB/2nd year 2nd SEM/Mobile Application Development (IA 2211) 2021/QuizSpot/app/src/main/res/layout/fragment_leaderboard.xml" value="0.36666666666666664" />
+        <entry key="..\:/CMB/2nd year 2nd SEM/Mobile Application Development (IA 2211) 2021/QuizSpot/app/src/main/res/layout/fragment_slideshow.xml" value="0.36666666666666664" />
+        <entry key="..\:/CMB/2nd year 2nd SEM/Mobile Application Development (IA 2211) 2021/QuizSpot/app/src/main/res/layout/nav_header_main.xml" value="0.4" />
+        <entry key="..\:/CMB/2nd year 2nd SEM/Mobile Application Development (IA 2211) 2021/QuizSpot/app/src/main/res/layout/test_item_layout.xml" value="0.36666666666666664" />
+        <entry key="..\:/CMB/2nd year 2nd SEM/Mobile Application Development (IA 2211) 2021/QuizSpot/app/src/main/res/menu/activity_main_drawer.xml" value="0.36666666666666664" />
+        <entry key="..\:/CMB/2nd year 2nd SEM/Mobile Application Development (IA 2211) 2021/QuizSpot/app/src/main/res/menu/bottom_menu.xml" value="0.36666666666666664" />
+        <entry key="..\:/CMB/2nd year 2nd SEM/Mobile Application Development (IA 2211) 2021/QuizSpot/app/src/main/res/menu/main.xml" value="0.36666666666666664" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
