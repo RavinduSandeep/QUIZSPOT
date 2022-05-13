@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.QuizSpot">
         <activity
+            android:name=".StatrtTestActivity"
+            android:exported="false" />
+        <activity
             android:name=".QuestionsActivity"
             android:exported="false" />
         <activity

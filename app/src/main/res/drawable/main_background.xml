@@ -10,7 +10,7 @@
         android:bottom="500dp"
         android:left="-50dp"
         android:right="-50dp"
-        android:top="-50dp"
+        android:top="-60dp"
         >
         <shape android:shape="oval">
             <solid android:color="@color/purple_500"/>

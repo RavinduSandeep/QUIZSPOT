@@ -34,23 +34,25 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     private TextView drawerProfileName, drawerProfileText;
 
-    private BottomNavigationView.OnNavigationItemSelectedListener onNavigationItemSelectedListener=
-            new BottomNavigationView.OnNavigationItemSelectedListener(){
+    private final BottomNavigationView.OnNavigationItemSelectedListener onNavigationItemSelectedListener =
+            new BottomNavigationView.OnNavigationItemSelectedListener() {
                 @Override
                 public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
-                    switch (item.getItemId())
-                    {
+                    switch (item.getItemId()) {
                         case R.id.nav_home:
-                            bottomNavigationView.setSelectedItemId(R.id.nav_home);
+//                            bottomNavigationView.setSelectedItemId(R.id.nav_home);
+                            setFragment(new CategoryFragment());
                             return true;
 
                         case R.id.nav_leaderboard:
-                            bottomNavigationView.setSelectedItemId(R.id.nav_leaderboard);
+//                            bottomNavigationView.setSelectedItemId(R.id.nav_leaderboard);
+                            setFragment(new LeaderboardFragment());
                             return true;
 
                         case R.id.nav_account:
-                            bottomNavigationView.setSelectedItemId(R.id.nav_account);
+//                            bottomNavigationView.setSelectedItemId(R.id.nav_account);
+                            setFragment(new AccountFragment());
                             return true;
                     }
 
