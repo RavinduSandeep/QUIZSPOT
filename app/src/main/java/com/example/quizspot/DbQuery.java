@@ -1,6 +1,7 @@
 package com.example.quizspot;
 
 import android.util.ArrayMap;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 
@@ -92,11 +93,14 @@ public class DbQuery {
 
     public static void loadCategories(MyCompleteListener completeListener){
         g_catList.clear();
+        Log.i("info", "localCategories");
 
         g_firestore.collection("QUIZ").get()
                 .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
                     @Override
                     public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                        Log.i("info", "Success");
+
 
                         Map<String, QueryDocumentSnapshot> docList = new ArrayMap<>();
 
@@ -128,6 +132,7 @@ public class DbQuery {
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
+                        Log.i("info", "Fail");
 
                         completeListener.OnFailure();
 
@@ -138,6 +143,8 @@ public class DbQuery {
 
     public static void loadQuestions(MyCompleteListener completeListener){
 
+        Log.i("info", "Load");
+
         g_quesList.clear();
         g_firestore.collection("Questions")
                 .whereEqualTo("CATEGORY", g_catList.get(g_selected_cat_index).getDocID())
@@ -146,6 +153,8 @@ public class DbQuery {
                 .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
                     @Override
                     public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+
+                        Log.i("info", "Success");
 
                         for(DocumentSnapshot doc : queryDocumentSnapshots)
                         {
@@ -167,6 +176,8 @@ public class DbQuery {
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
+
+                        Log.i("info", "Fail");
 
                         completeListener.OnFailure();
                     }

@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -89,6 +90,7 @@ public class StartTestActivity extends AppCompatActivity {
     }
 
     private void setData(){
+        Log.i("info", "Start");
         catName.setText(g_catList.get(DbQuery.g_selected_cat_index).getName());
         testNo.setText("Test No."+ String.valueOf(DbQuery.g_selected_test_index+1));
         totalQ.setText(String.valueOf(DbQuery.g_quesList.size()));
