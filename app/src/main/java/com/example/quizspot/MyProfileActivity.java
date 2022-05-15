@@ -17,6 +17,7 @@ import android.widget.Toast;
 import android.widget.Toolbar;
 
 public class MyProfileActivity extends AppCompatActivity {
+    // my profile activity
 
     private EditText name, email, phone;
     private LinearLayout editB;
@@ -32,13 +33,6 @@ public class MyProfileActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_profile);
-
-//        Toolbar toolbar= findViewById(R.id.toolbar);
-//        setSupportActionBar(toolbar);
-//        getSupportActionBar().setDisplayShowTitleEnabled(true);
-//
-//        getSupportActionBar().setTitle("My profile");
-//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         name = findViewById(R.id.mp_name);
         email = findViewById(R.id.mp_email);
