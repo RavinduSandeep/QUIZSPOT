@@ -3,6 +3,8 @@ package com.example.quizspot;
 import static com.example.quizspot.DbQuery.g_catList;
 import static com.example.quizspot.DbQuery.g_quesList;
 import static com.example.quizspot.DbQuery.g_selected_cat_index;
+import static com.example.quizspot.DbQuery.g_selected_test_index;
+import static com.example.quizspot.DbQuery.g_testList;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,12 +14,15 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.SnapHelper;
 
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import java.util.concurrent.TimeUnit;
 
 public class QuestionsActivity extends AppCompatActivity {
 
@@ -46,6 +51,8 @@ public class QuestionsActivity extends AppCompatActivity {
         setSnapHelper();
 
         setClickListener();
+
+        startTimer();
 
     }
 
@@ -108,9 +115,41 @@ public class QuestionsActivity extends AppCompatActivity {
 
         nextQuesB.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
+
+                if (quesID< g_quesList.size()-1){
+
+                    questionView.smoothScrollToPosition(quesID+1);
+                }
 
             }
         });
+    }
+
+    private void startTimer(){
+
+        long totalTime = g_testList.get(g_selected_test_index).getTime()*60*1000;
+
+        CountDownTimer timer = new CountDownTimer(totalTime, 1000) {
+            @Override
+            public void onTick(long remainingTime) {
+               String time = String.format("%2d:%2d min" ,
+                       TimeUnit.MILLISECONDS.toMinutes(remainingTime),
+                       TimeUnit.MILLISECONDS.toSeconds(remainingTime) - TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(remainingTime))
+
+                       );
+
+               timeTV.setText(time);
+
+            }
+
+            @Override
+            public void onFinish() {
+
+
+            }
+        };
+
+        timer.start();
     }
 }

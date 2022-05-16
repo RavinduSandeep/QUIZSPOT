@@ -65,7 +65,7 @@ public class TestAdapter extends RecyclerView.Adapter<TestAdapter.ViewHolder> {
             itemView.setOnClickListener((view)-> {
                     DbQuery.g_selected_test_index = pos;
 
-                    Intent intent = new Intent(itemView.getContext(),StartTestActivity.class);
+                    Intent intent = new Intent(itemView.getContext(),QuestionsActivity.class);
                     itemView.getContext().startActivity(intent);
 
             });

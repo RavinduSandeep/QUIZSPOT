@@ -40,7 +40,7 @@ public class QuestionAdapter extends RecyclerView.Adapter<QuestionAdapter.ViewHo
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         private TextView ques;
-        private Button optionA,optionB,optionC,optionD;
+        private Button optionA,optionB,optionC,optionD, prevSelectedB;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -50,6 +50,8 @@ public class QuestionAdapter extends RecyclerView.Adapter<QuestionAdapter.ViewHo
             optionB = itemView.findViewById(R.id.optionB);
             optionC = itemView.findViewById(R.id.optionC);
             optionD = itemView.findViewById(R.id.optionD);
+
+            prevSelectedB= null;
         }
 
         private  void setData(final int pos){
@@ -58,6 +60,76 @@ public class QuestionAdapter extends RecyclerView.Adapter<QuestionAdapter.ViewHo
             optionB.setText(questionList.get(pos).getOptionB());
             optionC.setText(questionList.get(pos).getOptionC());
             optionD.setText(questionList.get(pos).getOptionD());
+
+
+
+            optionA.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                    selectOption(optionA, 1, pos);
+
+                }
+            });
+
+            optionB.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                    selectOption(optionB, 2, pos);
+
+                }
+            });
+
+            optionC.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                    selectOption(optionC, 3, pos);
+
+                }
+            });
+
+            optionD.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                    selectOption(optionD, 4, pos);
+
+                }
+            });
+        }
+
+        private void selectOption(Button btn, int option_num, int quesID){
+
+            if(prevSelectedB== null){
+                btn.setBackgroundResource(R.drawable.selected_btn);
+                DbQuery.g_quesList.get(quesID).setSelectedAns(option_num);
+
+                prevSelectedB = btn;
+
+            }else {
+
+                if(prevSelectedB.getId()== btn.getId())
+                {
+                    btn.setBackgroundResource(R.drawable.unselected_btn);
+                    DbQuery.g_quesList.get(quesID).setSelectedAns(-1);
+
+                    prevSelectedB= null;
+                }
+                else
+                {
+                    prevSelectedB.setBackgroundResource(R.drawable.unselected_btn);
+                    btn.setBackgroundResource(R.drawable.selected_btn);
+
+                    DbQuery.g_quesList.get(quesID).setSelectedAns(option_num);
+
+                    prevSelectedB= btn;
+                }
+
+
+
+            }
 
         }
     }
