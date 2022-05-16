@@ -8,4 +8,16 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="main_background">#B5DDFD</color>
+    <color name="pink">#F31D8F</color>
+    <color name="lightBlue">#3081FF</color>
+    <color name="grey">#AEACAC</color>
+    <color name="red">#F32626</color>
+    <color name="green">#4CFD01</color>
+    <color name="darkBlue">#1A237E</color>
+
+
+
+
+
+
 </resources>
