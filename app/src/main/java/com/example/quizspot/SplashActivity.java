@@ -17,7 +17,7 @@ public class SplashActivity extends AppCompatActivity {
     private ImageView logo;
     private FirebaseAuth mAuth;
 
-
+// this is splash activity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
