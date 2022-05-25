@@ -133,6 +133,9 @@ public class AccountFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
+                Intent intent = new Intent(getContext(),MyProfileActivity.class);
+                startActivity(intent);
+
             }
         });
 

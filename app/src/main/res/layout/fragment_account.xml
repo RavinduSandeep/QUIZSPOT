@@ -108,12 +108,22 @@
                 android:id="@+id/rank"
                 android:layout_marginTop="8dp"
                 android:text="NA"
+                android:paddingBottom="8dp"
                 android:textSize="22sp"
                 android:textColor="@color/purple_700"
                 android:layout_weight="1"
                 android:gravity="center"
                 />
         </LinearLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="100dp"
+            android:background="@color/purple_700"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+
+            />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -128,7 +138,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="OVERALL \nSCORE"
+                android:text="OVERALL SCORE"
                 android:textSize="18sp"
                 android:padding="8dp"
                 />
@@ -137,12 +147,13 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/total_score"
                 android:layout_marginTop="8dp"
-                android:paddingBottom="6dp"
+                android:paddingBottom="8dp"
                 android:text="0"
                 android:textSize="22sp"
                 android:textColor="@color/purple_700"
                 android:layout_weight="1"
                 android:gravity="center"
+
                 />
         </LinearLayout>
 
@@ -221,7 +232,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Leader Board"
+                    android:text="Leaderboard"
                     android:textColor="@color/black"
                     android:layout_marginTop="8dp"
                     />
@@ -247,9 +258,9 @@
             >
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:id="@+id/profileB"
+                android:layout_width="68dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:orientation="vertical">
