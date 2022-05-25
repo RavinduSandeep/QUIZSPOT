@@ -1,4 +1,4 @@
-package com.example.quizspot;
+package com.example.quizspot.Adapters;
 
 import static com.example.quizspot.DbQuery.ANSWERED;
 import static com.example.quizspot.DbQuery.NOT_VISITED;
@@ -14,6 +14,10 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import androidx.core.content.ContextCompat;
+
+import com.example.quizspot.DbQuery;
+import com.example.quizspot.QuestionsActivity;
+import com.example.quizspot.R;
 
 public class QuestionGridAdapter extends BaseAdapter {
 

@@ -13,15 +13,14 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
-import java.util.List;
+import com.example.quizspot.Adapters.TestAdapter;
 
 public class TestActivity extends AppCompatActivity {
 
     private RecyclerView testView;
     private Toolbar toolbar;
 
-    private  TestAdapter adapter;
+    private TestAdapter adapter;
     private Dialog progressDialog;
     private TextView dialogText;
 
@@ -58,10 +57,25 @@ public class TestActivity extends AppCompatActivity {
             @Override
             public void OnSuccess() {
 
-                adapter = new TestAdapter(DbQuery.g_testList);
-                testView.setAdapter(adapter);
+                DbQuery.loadMyScores(new MyCompleteListener() {
+                    @Override
+                    public void OnSuccess() {
+                        adapter = new TestAdapter(DbQuery.g_testList);
+                        testView.setAdapter(adapter);
 
-                progressDialog.dismiss();
+                        progressDialog.dismiss();
+                    }
+
+                    @Override
+                    public void OnFailure() {
+                        progressDialog.dismiss();
+                        Toast.makeText(TestActivity.this, "Something Went Wrong Please Try Again Shortly !",
+                                Toast.LENGTH_SHORT).show();
+
+                    }
+                });
+
+
             }
 
             @Override
@@ -77,7 +91,6 @@ public class TestActivity extends AppCompatActivity {
 
 
     }
-
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {

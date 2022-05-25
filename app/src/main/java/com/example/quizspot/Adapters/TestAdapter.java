@@ -1,4 +1,4 @@
-package com.example.quizspot;
+package com.example.quizspot.Adapters;
 
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -9,6 +9,11 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.quizspot.DbQuery;
+import com.example.quizspot.Models.TestModel;
+import com.example.quizspot.R;
+import com.example.quizspot.StartTestActivity;
 
 import java.util.List;
 
@@ -65,7 +70,7 @@ public class TestAdapter extends RecyclerView.Adapter<TestAdapter.ViewHolder> {
             itemView.setOnClickListener((view)-> {
                     DbQuery.g_selected_test_index = pos;
 
-                    Intent intent = new Intent(itemView.getContext(),StartTestActivity.class);
+                    Intent intent = new Intent(itemView.getContext(), StartTestActivity.class);
                     itemView.getContext().startActivity(intent);
 
             });

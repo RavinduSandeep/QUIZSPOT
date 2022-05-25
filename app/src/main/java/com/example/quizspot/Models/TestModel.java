@@ -1,4 +1,4 @@
-package com.example.quizspot;
+package com.example.quizspot.Models;
 
 public class TestModel {
     private String testId;

@@ -1,4 +1,4 @@
-package com.example.quizspot;
+package com.example.quizspot.Adapters;
 
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -7,7 +7,10 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import com.example.quizspot.DbQuery;
 import com.example.quizspot.Models.CategoryModel;
+import com.example.quizspot.R;
+import com.example.quizspot.TestActivity;
 
 import java.util.List;
 

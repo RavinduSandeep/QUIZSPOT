@@ -5,6 +5,11 @@ import android.util.Log;
 
 import androidx.annotation.NonNull;
 
+import com.example.quizspot.Models.CategoryModel;
+import com.example.quizspot.Models.ProfileModel;
+import com.example.quizspot.Models.QuestionModel;
+import com.example.quizspot.Models.RankModel;
+import com.example.quizspot.Models.TestModel;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -14,6 +19,7 @@ import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
+import com.google.firebase.firestore.SetOptions;
 import com.google.firebase.firestore.WriteBatch;
 
 import java.util.ArrayList;
@@ -34,6 +40,7 @@ public class DbQuery {
     public static List<QuestionModel> g_quesList = new ArrayList<>();
 
     public static ProfileModel myProfile = new ProfileModel("NA",null);
+    public static RankModel myPerformance = new RankModel(0,-1);
 
     public static final int NOT_VISITED =0;
     public static final int UNANSWERED =1;
@@ -84,6 +91,8 @@ public class DbQuery {
                 myProfile.setName(documentSnapshot.getString("NAME"));
                 myProfile.setEmail(documentSnapshot.getString("EMAIL_ID"));
 
+                myPerformance.setScore(documentSnapshot.getLong("TOTAL_SCORE").intValue());
+
                 completeListener.OnSuccess();
 
             }
@@ -95,6 +104,77 @@ public class DbQuery {
             }
         });
     }
+
+    //26
+    public static void loadMyScores( MyCompleteListener completeListener){
+
+        g_firestore.collection("USERS").document(FirebaseAuth.getInstance().getUid())
+                .collection("USER_DATA").document("MY_SCORES")
+                .get()
+                .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                    @Override
+                    public void onSuccess(DocumentSnapshot documentSnapshot) {
+
+                        for( int i=0; i<g_testList.size(); i++){
+                            int top =0;
+                            if(documentSnapshot.get(g_testList.get(i).getTestId())!= null)
+                            {
+                                top =documentSnapshot.getLong(g_testList.get(i).getTestId()).intValue();
+                            }
+                            g_testList.get(i).setTopScore(top);
+                        }
+                            completeListener.OnSuccess();
+
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        completeListener.OnFailure();
+                    }
+                });
+    }
+
+
+    //25
+    public static void saveResult(int score, MyCompleteListener myCompleteListener)
+    {
+        WriteBatch batch = g_firestore.batch();
+
+        DocumentReference userDoc = g_firestore.collection("USERS").document(FirebaseAuth.getInstance().getUid());
+
+        batch.update(userDoc ,"TOTAL_SCORE", score);
+
+        if (score > g_testList.get(g_selected_test_index).getTopScore())
+        {
+            DocumentReference scoreDoc =userDoc.collection("USER_DATA").document("MY_SCORE");
+
+            Map<String, Object> testdata = new ArrayMap<>();
+            testdata.put(g_testList.get(g_selected_test_index).getTestId(), score);
+
+            batch.set(scoreDoc, testdata , SetOptions.merge());
+        }
+
+        batch.commit().addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void unused) {
+
+                if(score > g_testList.get(g_selected_test_index).getTopScore())g_testList.get(g_selected_test_index).setTopScore(score);
+
+                myPerformance.setScore(score);
+
+                myCompleteListener.OnSuccess();
+
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        myCompleteListener.OnFailure();
+                    }
+                });
+
+    }
+
 
     public static void loadCategories(MyCompleteListener completeListener){
         g_catList.clear();

@@ -40,18 +40,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
                     switch (item.getItemId()) {
-                        case R.id.nav_home:
-//                            bottomNavigationView.setSelectedItemId(R.id.nav_home);
+                        case R.id.navigation_home:_home:
                             setFragment(new CategoryFragment());
                             return true;
 
-                        case R.id.nav_leaderboard:
-//                            bottomNavigationView.setSelectedItemId(R.id.nav_leaderboard);
+                        case R.id.navigation_leaderboard:_leaderboard:
                             setFragment(new LeaderboardFragment());
                             return true;
 
-                        case R.id.nav_account:
-//                            bottomNavigationView.setSelectedItemId(R.id.nav_account);
+                        case R.id.navigation_account:_account:
                             setFragment(new AccountFragment());
                             return true;
                     }

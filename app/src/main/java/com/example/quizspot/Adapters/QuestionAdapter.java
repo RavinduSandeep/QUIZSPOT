@@ -1,4 +1,4 @@
-package com.example.quizspot;
+package com.example.quizspot.Adapters;
 
 import static com.example.quizspot.DbQuery.ANSWERED;
 import static com.example.quizspot.DbQuery.REVIEW;
@@ -14,7 +14,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.quizspot.DbQuery;
 import com.example.quizspot.Models.QuestionModel;
+import com.example.quizspot.R;
 
 import java.util.List;
 
@@ -147,7 +149,7 @@ public class QuestionAdapter extends RecyclerView.Adapter<QuestionAdapter.ViewHo
 
                     changeStatus(quesID, ANSWERED);
 
-                    prevSelectedB= btn;
+                    prevSelectedB = btn;
                 }
             }
         }
@@ -155,7 +157,7 @@ public class QuestionAdapter extends RecyclerView.Adapter<QuestionAdapter.ViewHo
 
     private void setOption(Button btn, int option_num, int quesID)
     {
-        if(DbQuery.g_quesList.get(quesID).getSelectedAns()== option_num)
+        if(DbQuery.g_quesList.get(quesID).getSelectedAns() == option_num)
         {
             btn.setBackgroundResource(R.drawable.selected_btn);
         }else{
