@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                             return true;
 
                         case R.id.navigation_account:_account:
-                            setFragment(new AccountFragment());
+                            setFragment(new AccountFragment() );
                             return true;
                     }
 
@@ -62,10 +62,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+//        getSupportActionBar().setTitle("Categories");
 
         bottomNavigationView= findViewById(R.id.bottom_nav_bar);
         main_frame = findViewById(R.id.main_frame);

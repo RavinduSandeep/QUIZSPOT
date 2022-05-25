@@ -31,7 +31,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                app:cardCornerRadius="50dp">
+                app:cardCornerRadius="30dp">
 
                 <ImageView
                     android:layout_width="90dp"
@@ -60,7 +60,7 @@
         </LinearLayout>
 
         <TextView
-            android:id="@+id/textView7"
+            android:id="@+id/name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="8dp"
@@ -137,6 +137,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/total_score"
                 android:layout_marginTop="8dp"
+                android:paddingBottom="6dp"
                 android:text="0"
                 android:textSize="22sp"
                 android:textColor="@color/purple_700"
