@@ -23,6 +23,7 @@ import androidx.recyclerview.widget.SnapHelper;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.GridView;
@@ -70,11 +71,8 @@ public class QuestionsActivity extends AppCompatActivity {
 
         gridAdapter = new QuestionGridAdapter(this, g_quesList.size());
         quesListGV.setAdapter(gridAdapter);
-
         setSnapHelper();
-
         setClickListener();
-
         startTimer();
 
     }

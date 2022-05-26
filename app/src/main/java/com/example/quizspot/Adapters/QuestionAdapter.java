@@ -5,6 +5,7 @@ import static com.example.quizspot.DbQuery.REVIEW;
 import static com.example.quizspot.DbQuery.UNANSWERED;
 import static com.example.quizspot.DbQuery.g_quesList;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,12 +32,13 @@ public class QuestionAdapter extends RecyclerView.Adapter<QuestionAdapter.ViewHo
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.question_item_layout,viewGroup,false);
+        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.question_item_layout, viewGroup, false);
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
+        Log.i("info", "OnBind");
         viewHolder.setData(i);
 
     }
@@ -49,7 +51,7 @@ public class QuestionAdapter extends RecyclerView.Adapter<QuestionAdapter.ViewHo
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         private TextView ques;
-        private Button optionA,optionB,optionC,optionD, prevSelectedB;
+        private Button optionA, optionB, optionC, optionD, prevSelectedB;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -60,20 +62,20 @@ public class QuestionAdapter extends RecyclerView.Adapter<QuestionAdapter.ViewHo
             optionC = itemView.findViewById(R.id.optionC);
             optionD = itemView.findViewById(R.id.optionD);
 
-            prevSelectedB= null;
+            prevSelectedB = null;
         }
 
-        private  void setData(final int pos){
+        private void setData(final int pos) {
             ques.setText(questionList.get(pos).getQuestion());
             optionA.setText(questionList.get(pos).getOptionA());
             optionB.setText(questionList.get(pos).getOptionB());
             optionC.setText(questionList.get(pos).getOptionC());
             optionD.setText(questionList.get(pos).getOptionD());
 
-            setOption(optionA,1,pos);
-            setOption(optionB,2,pos);
-            setOption(optionC,3,pos);
-            setOption(optionD,4,pos);
+            setOption(optionA, 1, pos);
+            setOption(optionB, 2, pos);
+            setOption(optionC, 3, pos);
+            setOption(optionD, 4, pos);
 
             optionA.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -112,36 +114,32 @@ public class QuestionAdapter extends RecyclerView.Adapter<QuestionAdapter.ViewHo
             });
         }
 
-        private void changeStatus(int id, int status){
+        private void changeStatus(int id, int status) {
 
-            if( g_quesList.get(id).getStatus() != REVIEW)
-            {
+            if (g_quesList.get(id).getStatus() != REVIEW) {
                 g_quesList.get(id).setStatus(status);
             }
 
         }
 
-        private void selectOption(Button btn, int option_num, int quesID){
+        private void selectOption(Button btn, int option_num, int quesID) {
 
-            if(prevSelectedB== null){
+            if (prevSelectedB == null) {
                 btn.setBackgroundResource(R.drawable.selected_btn);
                 DbQuery.g_quesList.get(quesID).setSelectedAns(option_num);
 
                 changeStatus(quesID, ANSWERED);
                 prevSelectedB = btn;
 
-            }else {
+            } else {
 
-                if(prevSelectedB.getId()== btn.getId())
-                {
+                if (prevSelectedB.getId() == btn.getId()) {
                     btn.setBackgroundResource(R.drawable.unselected_btn);
                     DbQuery.g_quesList.get(quesID).setSelectedAns(-1);
 
                     changeStatus(quesID, UNANSWERED);
-                    prevSelectedB= null;
-                }
-                else
-                {
+                    prevSelectedB = null;
+                } else {
                     prevSelectedB.setBackgroundResource(R.drawable.unselected_btn);
                     btn.setBackgroundResource(R.drawable.selected_btn);
 
@@ -155,12 +153,10 @@ public class QuestionAdapter extends RecyclerView.Adapter<QuestionAdapter.ViewHo
         }
     }
 
-    private void setOption(Button btn, int option_num, int quesID)
-    {
-        if(DbQuery.g_quesList.get(quesID).getSelectedAns() == option_num)
-        {
+    private void setOption(Button btn, int option_num, int quesID) {
+        if (DbQuery.g_quesList.get(quesID).getSelectedAns() == option_num) {
             btn.setBackgroundResource(R.drawable.selected_btn);
-        }else{
+        } else {
             btn.setBackgroundResource(R.drawable.unselected_btn);
         }
     }

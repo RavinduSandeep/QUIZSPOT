@@ -316,11 +316,15 @@
             android:background="@color/white"
             android:text="Check Your Rank in LeaderBoard"
             android:drawableRight="@drawable/ic_right"
+            android:textSize="16sp"
             android:drawablePadding="16dp"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
-            android:elevation="5dp"
             android:layout_marginBottom="16dp"
+            android:elevation="5dp"
+            android:translationZ="3dp"
+            android:stateListAnimator="@null"
+
             />
 
 

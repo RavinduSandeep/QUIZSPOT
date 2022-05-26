@@ -33,6 +33,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="20 : 15 min"
+
             android:id="@+id/tv_timer"
             android:layout_weight="1"
             android:textColor="#FFEB3B"
@@ -42,10 +43,9 @@
 
         <Button
             android:layout_width="wrap_content"
-            android:layout_height="45dp"
-            android:layout_weight="1"
+            android:layout_height="35dp"
+            android:layout_weight=".5"
             android:background="@drawable/button_border"
-            android:backgroundTint="#FF5722"
             android:text="Submit"
             android:id="@+id/submitB"
             android:textColor="@color/white"
@@ -111,12 +111,12 @@
             android:id="@+id/prev_quesB"
             app:srcCompat="@drawable/ic_left"
             android:background="@color/purple_700"
-            android:layout_marginLeft="24dp"
-            android:layout_marginRight="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="24dp"
 
             />
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="120dp"
             android:layout_height="40dp"
             android:background="@drawable/button_border"
             android:text="Clear Selection"
@@ -128,7 +128,7 @@
 
             />
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="120dp"
             android:layout_height="40dp"
             android:id="@+id/markB"
             android:background="@drawable/button_border"
@@ -146,8 +146,8 @@
             android:id="@+id/next_quesB"
             app:srcCompat="@drawable/ic_right"
             android:background="@color/purple_700"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="24dp"/>
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="8dp"/>
 
 
     </LinearLayout>
@@ -169,15 +169,16 @@
     </androidx.recyclerview.widget.RecyclerView>
 
     <ImageView
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:elevation="5dp"
         android:src="@drawable/ic_flag"
         android:id="@+id/mark_image"
-        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="20dp"
         android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/ll4"
-        app:tint="@color/lightBlue" />
+        app:tint="@color/red" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -96,6 +96,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     }
 
+
     private void setFragment(Fragment fragment){
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(main_frame.getId(),fragment);

@@ -4,10 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/white"
+    android:background="@color/main_background"
     android:padding="16dp"
     android:layout_margin="36dp"
-
 
     >
     <TextView
@@ -31,7 +30,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Do you want to exit from TEST?"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="8dp"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:textColor="@color/black"
@@ -44,11 +43,12 @@
         android:layout_width="wrap_content"
         android:layout_height="34dp"
         android:id="@+id/cancelB"
-        android:layout_marginTop="32dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="32dp"
         android:text="Cancel"
         android:textSize="12dp"
         android:background="@drawable/round_conner_button"
+        android:textColor="@color/white"
 
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/content" />
@@ -57,21 +57,22 @@
         android:layout_width="wrap_content"
         android:layout_height="34dp"
         android:id="@+id/confirmB"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
-        android:text="Cancel"
+        android:text="yes"
         android:textSize="12dp"
         android:background="@drawable/round_conner_button"
+        android:textColor="@color/white"
 
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/content" />
 
     <View
         android:layout_width="0dp"
-        android:layout_height="1dp"
+        android:layout_height="2dp"
         android:layout_marginTop="36dp"
-        android:layout_marginStart="64dp"
-        android:layout_marginEnd="64dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:id="@+id/divider"
         android:background="?android:attr/listDivider"
         app:layout_constraintStart_toStartOf="parent"

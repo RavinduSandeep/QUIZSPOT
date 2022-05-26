@@ -39,6 +39,7 @@
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:text="A"
+            android:id="@+id/profile_text"
             android:textStyle="bold"
             android:background="@drawable/circle"
             android:backgroundTint="@color/main_background"
@@ -164,35 +165,37 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        android:id="@+id/button_layout"
         app:layout_constraintBottom_toBottomOf="parent"
-
-        >
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
 
 
         <Button
+            android:id="@+id/cancelB"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:insetTop="0dp"
             android:insetBottom="0dp"
+            android:background="@color/purple_500"
+            android:textColor="@color/white"
             android:text="Cancel" />
 
         <View
             android:layout_width="1dp"
             android:layout_height="match_parent"
-            android:background="@color/white"
-            >
-        </View>
+            android:background="@color/white"></View>
 
         <Button
+            android:id="@+id/saveB"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:insetTop="0dp"
             android:insetBottom="0dp"
+            android:background="@color/purple_500"
+            android:textColor="@color/white"
             android:text="Save" />
     </LinearLayout>
 

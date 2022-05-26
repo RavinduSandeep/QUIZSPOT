@@ -54,6 +54,7 @@ public class TestActivity extends AppCompatActivity {
         testView.setLayoutManager(layoutManager);
 
         DbQuery.loadTestData(new MyCompleteListener() {
+
             @Override
             public void OnSuccess() {
 

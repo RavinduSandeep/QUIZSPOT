@@ -16,7 +16,7 @@
             android:name=".ScoreActivity"
             android:exported="false" />
         <activity
-            android:name=".StatrtTestActivity"
+            android:name=".StartTestActivity"
             android:exported="false" />
         <activity
             android:name=".QuestionsActivity"

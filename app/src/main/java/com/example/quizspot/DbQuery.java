@@ -39,7 +39,7 @@ public class DbQuery {
 
     public static List<QuestionModel> g_quesList = new ArrayList<>();
 
-    public static ProfileModel myProfile = new ProfileModel("NA",null);
+    public static ProfileModel myProfile = new ProfileModel("NA",null, null);
     public static RankModel myPerformance = new RankModel(0,-1);
 
     public static final int NOT_VISITED =0;
@@ -83,6 +83,40 @@ public class DbQuery {
                 });
     }
 
+    //27.30
+    public static void saveProfileData(String name, String phone, MyCompleteListener completeListener)
+    {
+        Map<String, Object> profileData = new ArrayMap<>();
+
+        profileData.put("NAME", name);
+
+        if (phone != null){
+            profileData.put("PHONE",phone);
+
+            g_firestore.collection("USERS").document(FirebaseAuth.getInstance().getUid())
+            .update(profileData)
+                    .addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void unused) {
+
+                            myProfile.setName(name);
+
+                            if(phone != null)
+                                myProfile.setPhone(phone);
+
+                            completeListener.OnSuccess();
+                        }
+                    })
+                    .addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            completeListener.OnFailure();
+                        }
+                    });
+        }
+    }
+
+
     public static void getUserData (MyCompleteListener completeListener){
         g_firestore.collection("USERS").document(FirebaseAuth.getInstance().getUid())
                 .get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
@@ -90,6 +124,9 @@ public class DbQuery {
             public void onSuccess(DocumentSnapshot documentSnapshot) {
                 myProfile.setName(documentSnapshot.getString("NAME"));
                 myProfile.setEmail(documentSnapshot.getString("EMAIL_ID"));
+
+                if(documentSnapshot.getString("PHONE")!= null)
+                    myProfile.setPhone(documentSnapshot.getString("PHONE"));
 
                 myPerformance.setScore(documentSnapshot.getLong("TOTAL_SCORE").intValue());
 
@@ -116,8 +153,10 @@ public class DbQuery {
                     public void onSuccess(DocumentSnapshot documentSnapshot) {
 
                         for( int i=0; i<g_testList.size(); i++){
+
                             int top =0;
-                            if(documentSnapshot.get(g_testList.get(i).getTestId())!= null)
+
+                            if(documentSnapshot.get(g_testList.get(i).getTestId()) != null)
                             {
                                 top =documentSnapshot.getLong(g_testList.get(i).getTestId()).intValue();
                             }
@@ -149,10 +188,10 @@ public class DbQuery {
         {
             DocumentReference scoreDoc =userDoc.collection("USER_DATA").document("MY_SCORE");
 
-            Map<String, Object> testdata = new ArrayMap<>();
-            testdata.put(g_testList.get(g_selected_test_index).getTestId(), score);
+            Map<String, Object> testData = new ArrayMap<>();
+            testData.put(g_testList.get(g_selected_test_index).getTestId(), score);
 
-            batch.set(scoreDoc, testdata , SetOptions.merge());
+            batch.set(scoreDoc, testData , SetOptions.merge());
         }
 
         batch.commit().addOnSuccessListener(new OnSuccessListener<Void>() {
