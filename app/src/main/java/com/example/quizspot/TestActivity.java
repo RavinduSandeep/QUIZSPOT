@@ -53,14 +53,15 @@ public class TestActivity extends AppCompatActivity {
         layoutManager.setOrientation(RecyclerView.VERTICAL);
         testView.setLayoutManager(layoutManager);
 
-        DbQuery.loadTestData(new MyCompleteListener() {
-
+        DbQuery.loadTestData(new MyCompleteListener()
+        {
             @Override
             public void OnSuccess() {
 
                 DbQuery.loadMyScores(new MyCompleteListener() {
                     @Override
-                    public void OnSuccess() {
+                    public void OnSuccess()
+                    {
                         adapter = new TestAdapter(DbQuery.g_testList);
                         testView.setAdapter(adapter);
 
@@ -68,23 +69,22 @@ public class TestActivity extends AppCompatActivity {
                     }
 
                     @Override
-                    public void OnFailure() {
+                    public void OnFailure()
+                    {
                         progressDialog.dismiss();
                         Toast.makeText(TestActivity.this, "Something Went Wrong Please Try Again Shortly !",
                                 Toast.LENGTH_SHORT).show();
-
                     }
                 });
-
 
             }
 
             @Override
-            public void OnFailure() {
+            public void OnFailure()
+            {
                 progressDialog.dismiss();
                 Toast.makeText(TestActivity.this, "Something Went Wrong Please Try Again Shortly !",
                         Toast.LENGTH_SHORT).show();
-
             }
         });
 

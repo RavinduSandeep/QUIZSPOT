@@ -68,7 +68,7 @@ public class CategoryFragment extends Fragment {
         View view= inflater.inflate(R.layout.fragment_category, container, false);
 
         Toolbar toolbar = getActivity().findViewById(R.id.toolbar);
-//       ((MainActivity)getActivity()).getSupportActionBar().setTitle("Categories");
+        ((MainActivity)getActivity()).getSupportActionBar().setTitle("QuizSpot - Categories");
 
         catview = view.findViewById(R.id.cat_Grid);
 
