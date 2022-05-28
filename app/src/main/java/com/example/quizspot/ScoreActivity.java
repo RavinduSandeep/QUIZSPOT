@@ -55,6 +55,9 @@ public class ScoreActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                Intent intent = new Intent(ScoreActivity.this, AnswersActivity.class);
+                startActivity(intent);
+
             }
         });
 
