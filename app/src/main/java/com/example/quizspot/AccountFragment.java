@@ -180,6 +180,9 @@ public class AccountFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
+                Intent intent = new Intent(getContext(),BookmarksActivity.class);
+                startActivity(intent);
+
             }
         });
 

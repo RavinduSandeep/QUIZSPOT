@@ -14,6 +14,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.quizspot.Models.QuestionModel;
+
 import java.util.concurrent.TimeUnit;
 
 public class ScoreActivity extends AppCompatActivity {
@@ -50,6 +52,8 @@ public class ScoreActivity extends AppCompatActivity {
         init();
 
         loadData();
+
+        setBookmark();
 
         viewAnsB.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -149,6 +153,32 @@ public class ScoreActivity extends AppCompatActivity {
                 progressDialog.dismiss();
             }
         });
+    }
+
+    private void setBookmark()
+    {
+        for(int i=0; i < DbQuery.g_quesList.size(); i++)
+        {
+            QuestionModel question = DbQuery.g_quesList.get(i);
+
+            if(question.isBookmarked())
+            {
+                if( ! DbQuery.g_bmIdList.contains(question.getqID()))
+                {
+                    DbQuery.g_bmIdList.add(question.getqID());
+                    DbQuery.myProfile.setBookmarkCount(DbQuery.g_bmIdList.size());
+                }
+            }
+            else
+            {
+                if(DbQuery.g_bmIdList.contains(question.getqID())){
+
+                    DbQuery.g_bmIdList.remove(question.getqID());
+                    DbQuery.myProfile.setBookmarkCount(DbQuery.g_bmIdList.size());
+                }
+
+            }
+        }
     }
 
     @Override
