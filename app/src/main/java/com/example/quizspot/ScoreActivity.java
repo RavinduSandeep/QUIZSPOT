@@ -28,7 +28,8 @@ public class ScoreActivity extends AppCompatActivity {
     private TextView dialogText;
     private int finalScore;
 
-
+// Score Activity
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
