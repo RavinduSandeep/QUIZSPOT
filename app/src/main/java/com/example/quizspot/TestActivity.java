@@ -24,6 +24,8 @@ public class TestActivity extends AppCompatActivity {
     private Dialog progressDialog;
     private TextView dialogText;
 
+    // this is test activity
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

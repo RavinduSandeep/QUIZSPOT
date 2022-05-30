@@ -29,7 +29,7 @@ public class ScoreActivity extends AppCompatActivity {
     private int finalScore;
 
 // Score Activity
-    
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
