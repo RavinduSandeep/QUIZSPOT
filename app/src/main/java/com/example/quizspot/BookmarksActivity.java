@@ -16,7 +16,7 @@ import com.example.quizspot.Adapters.AnswersAdapter;
 import com.example.quizspot.Adapters.BookmarkAdapter;
 
 public class BookmarksActivity extends AppCompatActivity {
-
+    //This is bookmarks activity
     private RecyclerView questionView;
     private Dialog progressDialog;
     private TextView dialogText;
