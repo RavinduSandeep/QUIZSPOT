@@ -34,7 +34,7 @@ import com.google.firebase.auth.FirebaseAuth;
  * create an instance of this fragment.
  */
 public class AccountFragment extends Fragment {
-
+    //This is account fragment
     private LinearLayout logoutB;
     private TextView profile_img_text, name, score, rank;
     private LinearLayout leaderB, profileB, bookmarksB;

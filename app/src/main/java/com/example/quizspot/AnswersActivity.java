@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import com.example.quizspot.Adapters.AnswersAdapter;
 
 public class AnswersActivity extends AppCompatActivity {
+    //This is answer activity
 
     private Toolbar toolbar;
     private RecyclerView answerView;
