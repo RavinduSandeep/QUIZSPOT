@@ -370,6 +370,8 @@ public class DbQuery {
 
         batch.set(bmDoc, bmData);
 
+        Log.i("info", "book mark");
+
 
 
 
